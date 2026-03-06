@@ -1,0 +1,82 @@
+EXPERIMENT 1 – BASIC NETWORK TOPOLOGIES
+Course Code: ENCS304
+Course Name: Computer Networks
+Name: Anand Kumar
+Program: B.Tech CSE(AI/ML)
+Roll no.- 2301730301
+
+====================================================
+TASK 1: STAR TOPOLOGY (USING SWITCH)
+====================================================
+Devices Used:
+• 1 Switch (2960-24TT)
+• 4 PCs
+
+IP Configuration:
+PC0 – 192.168.10.1
+PC1 – 192.168.10.2
+PC2 – 192.168.10.3
+PC3 – 192.168.10.4
+Subnet Mask: 255.255.255.0
+
+Ping Results:
+All ping requests were successful.
+Packets Sent = 4
+Packets Received = 4
+Packet Loss = 0%
+
+Observation:
+Switch forwards frames only to the intended destination port.
+No collisions were observed.
+Communication was fast and stable.
+
+====================================================
+TASK 2: BUS-LIKE TOPOLOGY (USING HUB)
+====================================================
+Devices Used:
+• 1 Hub
+• 4 PCs
+
+IP Configuration:
+Same IP scheme as Task 1.
+
+Ping Results:
+All PCs successfully communicated.
+Collisions observed during simultaneous ping in simulation mode.
+
+Observation:
+Hub broadcasts frames to all ports.
+Multiple packets were seen flooding all connected devices.
+Delay observed compared to switch topology.
+
+====================================================
+TASK 3: RING-LIKE TOPOLOGY (3 SWITCH LOOP)
+====================================================
+Devices Used:
+• 3 Switches (2960-24TT)
+• 6 PCs
+
+IP Configuration:
+192.168.20.1 – 192.168.20.6
+Subnet Mask: 255.255.255.0
+
+Ping Results:
+Successful communication across switches.
+Packets followed the active forwarding path.
+
+Observation:
+Spanning Tree Protocol (STP) blocked one redundant port (orange state).
+Packets avoided blocked link and followed active route.
+
+====================================================
+TASK 4: FAILURE TEST
+====================================================
+Action Performed:
+One link between switches was disconnected.
+
+Result:
+Communication continued successfully.
+
+Observation:
+STP activated alternate path.
+Ring topology provided fault tolerance.
